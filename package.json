@@ -1,6 +1,6 @@
 {
   "name": "chuks-react-portfolio",
-  "version": "3.0.0",
+  "version": "3.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -22,7 +22,7 @@
     "react-datepicker": "^4.8.0",
     "react-dom": "18.1.0",
     "react-markdown": "^8.0.3",
-    "react-syntax-highlighter": "^5.8.0",
+    "react-syntax-highlighter": "^15.6.1",
     "react-textarea-autosize": "^8.3.4",
     "remark": "^14.0.2",
     "remark-html": "^15.0.1",
