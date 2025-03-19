@@ -1,6 +1,6 @@
 {
   "name": "chuks-react-portfolio",
-  "version": "3.0",
+  "version": "3.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -14,7 +14,7 @@
     "custom-cursor-react": "^1.0.5",
     "gray-matter": "^4.0.3",
     "gsap": "^3.10.4",
-    "next": "12.1.6",
+    "next": "^15.2.3",
     "next-themes": "^0.2.0",
     "parse-numeric-range": "^1.3.0",
     "postcss": "^8.4.13",
@@ -22,7 +22,7 @@
     "react-datepicker": "^4.8.0",
     "react-dom": "18.1.0",
     "react-markdown": "^8.0.3",
-    "react-syntax-highlighter": "^15.5.0",
+    "react-syntax-highlighter": "^5.8.0",
     "react-textarea-autosize": "^8.3.4",
     "remark": "^14.0.2",
     "remark-html": "^15.0.1",
