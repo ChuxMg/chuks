@@ -1,0 +1,130 @@
+{
+  "name": "Chuks",
+  "headerTaglineOne": "Hello",
+  "headerTaglineTwo": "I'm Chuks Mgbojikwe",
+  "headerTaglineThree": "Web Developer",
+  "headerTaglineFour": " based in Abuja, Nigeria.",
+  "showCursor": false,
+  "showBlog": false,
+  "darkMode": true,
+  "showResume": true,
+  "socials": [
+    { "id": "1", "title": "Github", "link": "https://github.com/ChuxMg" },
+    {
+      "id": "2",
+      "title": "LinkedIn",
+      "link": "https://www.linkedin.com/in/chuks-mgbojikwe"
+    },
+    { "id": "3", "title": "X", "link": "https://x.com/chux_ffi" },
+    { "id": "4", "title": "Email", "link": "mailto:chuxmgbojikwe@gmail.com" }
+  ],
+  "projects": [
+    {
+      "id": "1",
+      "title": "Expenses Tracker App",
+      "description": "Web Design and Development",
+      "imageSrc": "images/expenses-tracker-app.png",
+      "url": "https://expense-tracker-app-nextjs.vercel.app/"
+    },
+    {
+      "id": "2",
+      "title": "Recipe Book - Meals App",
+      "description": "Expo App",
+      "imageSrc": "images/recipe-app.png",
+      "url": "https://github.com/ChuxMg/MealsApp"
+    },
+    {
+      "id": "3",
+      "title": "Favorite Places App",
+      "description": "Expo App",
+      "imageSrc": "",
+      "url": "https://github.com/ChuxMg/Favorite-Places-App"
+    },
+    {
+      "id": "4",
+      "title": "Quick Cart",
+      "description": "Ecommerce Web App",
+      "imageSrc": "images/quickcart-app.png",
+      "url": "https://quickcart-psi.vercel.app"
+    },
+    {
+      "id": "5",
+      "title": "Co-Banking",
+      "description": "Web Design & Development",
+      "imageSrc": "images/banking-app-2.png",
+      "url": "https://github.com/ChuxMg/co_banking"
+    },
+    {
+      "id": "6",
+      "title": "Admin Dashboard",
+      "description": "Web Design & Development",
+      "imageSrc": "images/admin-dashboard.png",
+      "url": "https://github.com/ChuxMg/admin-dashboard"
+    },
+    {
+      "id": "7",
+      "title": "Music Player App",
+      "description": "Expo App",
+      "imageSrc": "images/",
+      "url": "https://github.com/ChuxMg/music-player"
+    },
+    {
+      "id": "8",
+      "title": "Mobile App - Aora",
+      "description": "Expo App",
+      "imageSrc": "images/",
+      "url": "https://github.com/ChuxMg/MobileApp-Aora-ReactNative"
+    },
+    {
+      "id": "9",
+      "title": "Uber Clone App",
+      "description": "Expo App",
+      "imageSrc": "images/",
+      "url": "https://github.com/ChuxMg/uber-clone-app"
+    }
+  ],
+  "services": [
+    {
+      "id": "1",
+      "title": "Web Design",
+      "description": "I build and optimize your online presence. Website is the digital entry point into your business and a powerful revenue channel."
+    },
+    {
+      "id": "2",
+      "title": "Branding",
+      "description": "I design key brand elements such as the logo, color scheme, typography, and other design components that makes your brand stand out from competitors."
+    }
+  ],
+  "aboutpara": "My professional approach is characterized by a strong emphasis on analysis and a commitment to optimizing time management in executing my responsibilities. I have experience collaborating with international teams and demonstrating the ability to perform exceptionally in independent work settings.",
+  "resume": {
+    "tagline": "I'm a web developer, software engineer.",
+    "description": "I am well-versed in React, React Native, Javascript, and most of the Web frameworks.",
+    "experiences": [
+      {
+        "id": "1",
+        "dates": "March 2022 - Present",
+        "type": "Full Time",
+        "position": "Frontend Engineer",
+        "bullets": "Worked on the frontend of React, and React Native applications"
+      }
+    ],
+    "education": {
+      "universityName": "University Of Benin",
+      "universityDate": "2016",
+      "universityPara": "Bachelors of Science, Government Administration"
+    },
+    "languages": ["Javascript", "HTML5", "CSS", "Typescript"],
+    "frameworks": [
+      "React",
+      "React Native",
+      "Next.js",
+      "Node.js ",
+      "Express.js",
+      "Remix.js ",
+      "jQuery ",
+      "PostgreSQL ",
+      "MongoDB"
+    ],
+    "others": ["Figma", "AdobeXD"]
+  }
+}
