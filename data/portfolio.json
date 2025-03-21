@@ -98,8 +98,8 @@
   "aboutpara": "My professional approach is characterized by a strong emphasis on analysis and a commitment to optimizing time management in executing my responsibilities. I have experience collaborating with international teams and demonstrating the ability to perform exceptionally in independent work settings.",
   "skillspara": "Familiar with HTML, CSS, Javascript, jQuery, Node.js, Express.js, EJS, Github, React, React Native, MongoDB, PostgreSQL, API, Next.js, TypeScript, and Remix.js.",
   "resume": {
-    "tagline": "I'm a web developer, software engineer.",
-    "description": "I am well-versed in React, React Native, Javascript, and most of the Web frameworks.",
+    "tagline": "I am a dynamic, detail-oriented web developer passionate about creating responsive, user-friendly websites. I seek to leverage my expertise in HTML, CSS, JavaScript, TypeScript, React, React Native, and modern frameworks to deliver innovative digital solutions that enhance user experience and drive business growth.",
+    "description": "Eager to contribute to a collaborative team environment while continuously learning and adapting to new technologies.",
     "experiences": [
       {
         "id": "1",
@@ -111,7 +111,7 @@
     ],
     "education": {
       "universityName": "University Of Benin",
-      "universityDate": "2016",
+      "universityDate": "2015",
       "universityPara": "Bachelors of Science, Government Administration"
     },
     "languages": ["Javascript", "HTML5", "CSS", "Typescript"],
@@ -123,6 +123,7 @@
       "Express.js",
       "Remix.js ",
       "jQuery ",
+      "API",
       "PostgreSQL ",
       "MongoDB"
     ],
