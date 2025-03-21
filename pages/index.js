@@ -13,7 +13,6 @@ import Cursor from "../components/Cursor";
 // Local Data
 import data from "../data/portfolio.json";
 
-
 export default function Home() {
   // Ref
   const workRef = useRef();
@@ -47,6 +46,12 @@ export default function Home() {
       { y: 0, x: 0, transform: "scale(1)" }
     );
   }, []);
+
+  const formatedLanguages = data.resume.languages.join(", ");
+
+  const formatedFrameworks = data.resume.frameworks.join(", ");
+
+  const formatedOthers = data.resume.others.join(", ");
 
   return (
     <div className={`relative ${data.showCursor && "cursor-none"}`}>
@@ -130,11 +135,20 @@ export default function Home() {
             </Link>
           </div>
         )} */}
-        
+
         <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={aboutRef}>
           <h1 className="tablet:m-10 text-2xl text-bold">About.</h1>
           <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
             {data.aboutpara}
+          </p>
+        </div>
+
+        <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={aboutRef}>
+          <h1 className="tablet:m-10 text-2xl text-bold">Skills.</h1>
+          <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
+            <ServiceCard name="Languages" description={formatedLanguages} />
+            <ServiceCard name="Frameworks" description={formatedFrameworks} />
+            <ServiceCard name="Others" description={formatedOthers} />
           </p>
         </div>
         <Footer />

@@ -96,6 +96,7 @@
     }
   ],
   "aboutpara": "My professional approach is characterized by a strong emphasis on analysis and a commitment to optimizing time management in executing my responsibilities. I have experience collaborating with international teams and demonstrating the ability to perform exceptionally in independent work settings.",
+  "skillspara": "Familiar with HTML, CSS, Javascript, jQuery, Node.js, Express.js, EJS, Github, React, React Native, MongoDB, PostgreSQL, API, Next.js, TypeScript, and Remix.js.",
   "resume": {
     "tagline": "I'm a web developer, software engineer.",
     "description": "I am well-versed in React, React Native, Javascript, and most of the Web frameworks.",
