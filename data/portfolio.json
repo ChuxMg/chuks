@@ -1,5 +1,6 @@
 {
   "name": "Chuks",
+  "lName": "Mgbojikwe",
   "headerTaglineOne": "Hello",
   "headerTaglineTwo": "I'm Chuks Mgbojikwe",
   "headerTaglineThree": "Web Developer",
@@ -8,6 +9,7 @@
   "showBlog": false,
   "darkMode": true,
   "showResume": true,
+  "resumePhoto": "images/chux-profile-photo.png",
   "socials": [
     { "id": "1", "title": "Github", "link": "https://github.com/ChuxMg" },
     {
@@ -16,7 +18,8 @@
       "link": "https://www.linkedin.com/in/chuks-mgbojikwe"
     },
     { "id": "3", "title": "X", "link": "https://x.com/chux_ffi" },
-    { "id": "4", "title": "Email", "link": "mailto:chuxmgbojikwe@gmail.com" }
+    { "id": "4", "title": "Email", "link": "mailto:chuxmgbojikwe@gmail.com" },
+    { "id": "5", "title": "WhatsApp", "link": "http://wa.me/2348036570964" }
   ],
   "projects": [
     {
@@ -37,7 +40,7 @@
       "id": "3",
       "title": "Favorite Places App",
       "description": "Expo App",
-      "imageSrc": "",
+      "imageSrc": "images/favorite-places-app.jpeg",
       "url": "https://github.com/ChuxMg/Favorite-Places-App"
     },
     {
@@ -72,14 +75,14 @@
       "id": "8",
       "title": "Mobile App - Aora",
       "description": "Expo App",
-      "imageSrc": "images/mobile-app-aora-2.jpeg",
+      "imageSrc": "images/mobile-app-aora-3.jpeg",
       "url": "https://github.com/ChuxMg/MobileApp-Aora-ReactNative"
     },
     {
       "id": "9",
       "title": "Uber Clone App",
       "description": "Expo App",
-      "imageSrc": "images/",
+      "imageSrc": "images/uber-clone-app.png",
       "url": "https://github.com/ChuxMg/uber-clone-app"
     }
   ],
