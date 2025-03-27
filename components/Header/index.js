@@ -7,7 +7,7 @@ import Button from "../Button";
 import data from "../../data/portfolio.json";
 // import Image from "next/image";
 
-const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
+const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBlog }) => {
   const router = useRouter();
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -28,7 +28,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                 onClick={() => router.push("/")}
                 className="font-medium p-2 laptop:p-0 link"
               >
-                {name}.
+                {name}
               </h1>
 
               <div className="flex items-center">
@@ -78,6 +78,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                 <div className="grid grid-cols-1">
                   <Button onClick={handleWorkScroll}>Work</Button>
                   <Button onClick={handleAboutScroll}>About</Button>
+
                   {showBlog && (
                     <Button onClick={() => router.push("/blog")}>Blog</Button>
                   )}
@@ -87,7 +88,10 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                     </Button>
                   )}
 
-                  <Button onClick={() => window.open(socials[3].link)}>Contact</Button>
+                  {/* <Button onClick={() => window.open(socials[3].link)}>
+                    Contact
+                  </Button> */}
+                  <Button onClick={handleContactScroll}>Contact</Button>
                 </div>
               ) : (
                 <div className="grid grid-cols-1">
@@ -106,13 +110,10 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                     </Button>
                   )}
 
-                  <Button
-                    onClick={() =>
-                      window.open(socials[3].link)
-                    }
-                  >
+                  <Button onClick={() => window.open(socials[3].link)}>
                     Contact
                   </Button>
+                  {/* <Button onClick={handleContactScroll}>Contact</Button> */}
                 </div>
               )}
             </Popover.Panel>
@@ -128,7 +129,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
           onClick={() => router.push("/")}
           className="font-medium cursor-pointer mob:p-2 laptop:p-0"
         >
-          {name}.
+          {name}
         </h1>
         {!isBlog ? (
           <div className="flex">
@@ -146,11 +147,10 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
               </Button>
             )}
 
-            <Button
-              onClick={() => window.open(socials[3].link)}
-            >
+            {/* <Button onClick={() => window.open(socials[3].link)}>
               Contact
-            </Button>
+            </Button> */}
+            <Button onClick={handleContactScroll}>Contact</Button>
             {mounted && theme && data.darkMode && (
               <Button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
@@ -180,11 +180,11 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
               </Button>
             )}
 
-            <Button
-              onClick={() => window.open(socials[3].link)}
-            >
+            <Button onClick={() => window.open(socials[3].link)}>
               Contact
             </Button>
+
+            {/* <Button onClick={handleContactScroll}>Contact</Button> */}
 
             {mounted && theme && data.darkMode && (
               <Button

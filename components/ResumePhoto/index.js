@@ -5,7 +5,7 @@ const ResumePhoto = () => {
   return (
     <div className="flex flex-col mb-4">
       <img
-        src={myData.resumePhoto} // Replace this with the actual URL of your photo
+        src={myData.resumePhoto}
         alt="chuks-img"
         className="w-36 h-36 rounded-full shadow-lg"
       />

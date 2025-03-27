@@ -5,7 +5,6 @@ import Header from "../components/Header";
 import ProjectResume from "../components/ProjectResume";
 import Socials from "../components/Socials";
 import ResumePhoto from "../components/ResumePhoto";
-import Button from "../components/Button";
 import { useTheme } from "next-themes";
 // Data
 import { name, lName, showResume } from "../data/portfolio.json";

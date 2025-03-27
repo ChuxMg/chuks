@@ -11,15 +11,31 @@
   "showResume": true,
   "resumePhoto": "images/chux-profile-photo.png",
   "socials": [
-    { "id": "1", "title": "Github", "link": "https://github.com/ChuxMg" },
+    { "id": "1", "title": "Github", "link": "https://github.com/ChuxMg", "icon": "logo-github" },
     {
       "id": "2",
       "title": "LinkedIn",
-      "link": "https://www.linkedin.com/in/chuks-mgbojikwe"
+      "link": "https://www.linkedin.com/in/chuks-mgbojikwe",
+      "icon": "logo-linkedin"
     },
-    { "id": "3", "title": "X", "link": "https://x.com/chux_ffi" },
-    { "id": "4", "title": "Email", "link": "mailto:chuxmgbojikwe@gmail.com" },
-    { "id": "5", "title": "WhatsApp", "link": "http://wa.me/2348036570964" }
+    {
+      "id": "3",
+      "title": "X",
+      "link": "https://x.com/chux_ffi",
+      "icon": "logo-twitter"
+    },
+    {
+      "id": "4",
+      "title": "Email",
+      "link": "mailto:chuxmgbojikwe@gmail.com",
+      "icon": "mail-outline"
+    },
+    {
+      "id": "5",
+      "title": "WhatsApp",
+      "link": "http://wa.me/2348036570964",
+      "icon": "logo-whatsapp"
+    }
   ],
   "projects": [
     {
