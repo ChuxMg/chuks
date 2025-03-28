@@ -131,21 +131,21 @@
     "education": {
       "universityName": "University Of Benin",
       "universityDate": "2015",
-      "universityPara": "Bachelors of Science, Government Administration"
+      "universityPara": "Bachelors of Science, Government Management"
     },
     "languages": ["Javascript", "HTML5", "CSS", "Typescript"],
     "frameworks": [
       "React",
       "React Native",
       "Next.js",
-      "Node.js ",
+      "Node.js",
       "Express.js",
-      "Remix.js ",
-      "jQuery ",
+      "Remix.js",
+      "jQuery",
       "API",
-      "PostgreSQL ",
+      "PostgreSQL",
       "MongoDB"
     ],
-    "others": ["Figma", "AdobeXD"]
+    "others": ["Figma", "AdobeXD", "CorelDraw"]
   }
 }
