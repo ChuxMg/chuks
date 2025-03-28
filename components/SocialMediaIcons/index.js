@@ -6,16 +6,16 @@ import { MdOutlineEmail } from "react-icons/md";
 
 const SocialMediaIcons = ({ size }) => {
   const socialMediaLinks = [
+    { icon: <FaGithub size={size} />, link: "https://github.com/ChuxMg" },
     {
-      icon: <MdOutlineEmail size={size} />,
-      link: "mailto:chuxmgbojikwe@gmail.com",
+      icon: <FaLinkedin size={size} />,
+      link: "https://www.linkedin.com/in/chuks-mgbojikwe"
     },
     { icon: <FaXTwitter size={size} />, link: "https://x.com/chux_ffi" },
     {
-      icon: <FaLinkedin size={size} />,
-      link: "https://www.linkedin.com/in/chuks-mgbojikwe",
+      icon: <MdOutlineEmail size={size} />,
+      link: "mailto:chuxmgbojikwe@gmail.com"
     },
-    { icon: <FaGithub size={size} />, link: "https://github.com/ChuxMg" },
     { icon: <FaWhatsapp size={size} />, link: "http://wa.me/2348036570964" },
   ];
 

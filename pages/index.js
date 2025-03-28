@@ -17,11 +17,12 @@ export default function Home() {
   // Ref
   const workRef = useRef();
   const aboutRef = useRef();
+  const contactRef = useRef();
+  const skillsRef = useRef();
   const textOne = useRef();
   const textTwo = useRef();
   const textThree = useRef();
   const textFour = useRef();
-  const contactRef = useRef();
 
   // Handling Scroll
   const handleWorkScroll = () => {
@@ -154,7 +155,7 @@ export default function Home() {
           </div>
         )} */}
 
-        <div className="mt-10 laptop:mt-20 p-2 laptop:p-0" ref={aboutRef}>
+        <div className="mt-10 laptop:mt-20 p-2 laptop:p-0" ref={skillsRef}>
           <h1 className="tablet:m-10 text-2xl text-bold">Skills.</h1>
           <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
             <ServiceCard name="Languages" description={formatedLanguages} />
