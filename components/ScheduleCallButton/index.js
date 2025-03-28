@@ -12,7 +12,7 @@ export default function ScheduleCallButton() {
   };
 
   return (
-    <div className="flex items-center p-2">
+    <div className="flex items-center">
       <Button
         onClick={handleScheduleClick}
         classes={`px-6 py-3 text-white ${
