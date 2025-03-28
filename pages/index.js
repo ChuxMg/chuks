@@ -107,7 +107,7 @@ export default function Home() {
           </div>
 
           {/* <Socials className="mt-2 laptop:mt-5" /> */}
-          <SocialMediaIcons size="32" />
+          <SocialMediaIcons size="30" />
         </div>
         <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={workRef}>
           <h1 className="text-2xl text-bold">Work.</h1>
