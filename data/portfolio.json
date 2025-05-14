@@ -43,7 +43,7 @@
       "title": "Expenses Tracker App",
       "description": "Web Design and Development",
       "imageSrc": "images/expenses-tracker-app.png",
-      "url": "https://expense-tracker-app-nextjs.vercel.app/"
+      "url": "https://github.com/ChuxMg/expense-tracker-app-nextjs"
     },
     {
       "id": "2",
@@ -64,7 +64,7 @@
       "title": "Quick Cart",
       "description": "Ecommerce Web App",
       "imageSrc": "images/quickcart-app.png",
-      "url": "https://quickcart-psi.vercel.app"
+      "url": "https://github.com/ChuxMg/quickcart"
     },
     {
       "id": "5",
@@ -143,8 +143,10 @@
       "Remix.js",
       "jQuery",
       "API",
+      "OAuth",
       "PostgreSQL",
-      "MongoDB"
+      "MongoDB",
+      "Prisma"
     ],
     "others": ["Figma", "AdobeXD", "CorelDraw"]
   }

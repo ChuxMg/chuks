@@ -3,6 +3,7 @@ import Socials from "../Socials";
 import Link from "next/link";
 import Button from "../Button";
 import ScheduleCallButton from "../ScheduleCallButton";
+import MailtoButton from "../MailtoButton";
 
 const Footer = ({}) => {
 
@@ -22,6 +23,8 @@ const Footer = ({}) => {
             </h1>
             {/* <Button type="primary">Schedule a call</Button> */}
             <ScheduleCallButton />
+            {/* <MailtoButton /> */}
+           
             <div className="mt-10">
               <Socials />
             </div>
