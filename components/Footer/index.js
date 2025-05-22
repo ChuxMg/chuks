@@ -1,12 +1,11 @@
 import React from "react";
 import Socials from "../Socials";
 import Link from "next/link";
-import Button from "../Button";
 import ScheduleCallButton from "../ScheduleCallButton";
 import MailtoButton from "../MailtoButton";
+import ScheduleMeeting from "../ScheduleMeeting";
 
 const Footer = ({}) => {
-
   const currentYear = new Date().getFullYear();
 
   return (
@@ -22,9 +21,12 @@ const Footer = ({}) => {
               TOGETHER
             </h1>
             {/* <Button type="primary">Schedule a call</Button> */}
-            <ScheduleCallButton />
+            {/* <ScheduleCallButton /> */}
+
             {/* <MailtoButton /> */}
-           
+
+            <ScheduleMeeting />
+
             <div className="mt-10">
               <Socials />
             </div>
