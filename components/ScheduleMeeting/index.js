@@ -1,11 +1,12 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { Button } from "/src/components/ui/button";
 import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "/src/components/ui/card";
+  Dialog,
+  DialogHeader,
+  DialogContent,
+  DialogTitle,
+  DialogDescription,
+} from "/src/components/ui/dialog";
 import { Input } from "/src/components/ui/input";
 import { Label } from "/src/components/ui/label";
 import { Textarea } from "/src/components/ui/textarea";
@@ -23,24 +24,6 @@ const ScheduleMeeting = () => {
     description: "",
   });
   const [errors, setErrors] = useState({});
-  const dialogRef = useRef(null);
-
-  // Click outside handler
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dialogRef.current && !dialogRef.current.contains(event.target)) {
-        setIsOpen(false);
-      }
-    };
-
-    if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isOpen]);
 
   const validateForm = () => {
     const newErrors = {};
@@ -118,201 +101,192 @@ const ScheduleMeeting = () => {
   };
 
   return (
-    <>
-      {/* Floating action button */}
-
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <ScheduleButton handleClick={() => setIsOpen(true)} />
 
       {/* Overlay dialog */}
       {isOpen && (
-        <div className="fixed inset-0 bg-gray-100 dark:bg-gray-900 flex items-center justify-center p-4 z-50">
-          <div ref={dialogRef}>
-            <Card className="w-full max-w-md bg-white dark:bg-gray-800">
-              <CardHeader>
-                <CardTitle className="text-gray-900 dark:text-white">
-                  Schedule a Meeting
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                {isSubmitted ? (
-                  <div className="text-center py-8">
-                    <p className="text-green-600 dark:text-green-400 font-medium">
-                      Meeting scheduled!
-                    </p>
-                    <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
-                      Invites will be sent to attendees
-                    </p>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <div>
-                      <Label
-                        htmlFor="title"
-                        className="text-gray-900 dark:text-white"
-                      >
-                        Meeting Title
-                      </Label>
-                      <Input
-                        id="title"
-                        name="title"
-                        value={formData.title}
-                        onChange={handleInputChange}
-                        className={`${
-                          errors.title ? "border-red-500" : ""
-                        } bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500`}
-                        placeholder="Enter meeting title"
-                      />
-                      {errors.title && (
-                        <p className="text-red-500 dark:text-red-400 text-sm mt-1">
-                          {errors.title}
-                        </p>
-                      )}
-                    </div>
+        <DialogContent className="sm:max-w-[425px]">
+          <DialogHeader>
+            <DialogTitle>Schedule Meeting</DialogTitle>
+            <DialogDescription>
+              Schedule a meeting with me. Looking forward to our conversation!
+            </DialogDescription>
+          </DialogHeader>
 
-                    <div>
-                      <Label
-                        htmlFor="name"
-                        className="text-gray-900 dark:text-white"
-                      >
-                        Name
-                      </Label>
-                      <Input
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        className={`${
-                          errors.title ? "border-red-500" : ""
-                        } bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500`}
-                        placeholder="Enter name"
-                      />
-                      {errors.name && (
-                        <p className="text-red-500 dark:text-red-400 text-sm mt-1">
-                          {errors.name}
-                        </p>
-                      )}
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-4">
-                      <div>
-                        <Label
-                          htmlFor="date"
-                          className="text-gray-900 dark:text-white"
-                        >
-                          Date
-                        </Label>
-                        <Input
-                          id="date"
-                          name="date"
-                          type="date"
-                          value={formData.date}
-                          onChange={handleInputChange}
-                          className={`${
-                            errors.date ? "border-red-500" : ""
-                          } bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500`}
-                        />
-                        {errors.date && (
-                          <p className="text-red-500 dark:text-red-400 text-sm mt-1">
-                            {errors.date}
-                          </p>
-                        )}
-                      </div>
-                      <div>
-                        <Label
-                          htmlFor="time"
-                          className="text-gray-900 dark:text-white"
-                        >
-                          Time
-                        </Label>
-                        <Input
-                          id="time"
-                          name="time"
-                          type="time"
-                          value={formData.time}
-                          onChange={handleInputChange}
-                          className={`${
-                            errors.time ? "border-red-500" : ""
-                          } bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500`}
-                        />
-                        {errors.time && (
-                          <p className="text-red-500 dark:text-red-400 text-sm mt-1">
-                            {errors.time}
-                          </p>
-                        )}
-                      </div>
-                    </div>
-
-                    <div>
-                      <Label
-                        htmlFor="attendees"
-                        className="text-gray-900 dark:text-white"
-                      >
-                        Attendees (emails)
-                      </Label>
-                      <Input
-                        id="attendees"
-                        name="attendees"
-                        value={formData.attendees}
-                        onChange={handleInputChange}
-                        className={`${
-                          errors.attendees ? "border-red-500" : ""
-                        } bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500`}
-                        placeholder="email1@example.com, email2@example.com"
-                      />
-                      {errors.attendees && (
-                        <p className="text-red-500 dark:text-red-400 text-sm mt-1">
-                          {errors.attendees}
-                        </p>
-                      )}
-                    </div>
-
-                    <div>
-                      <Label
-                        htmlFor="description"
-                        className="text-gray-900 dark:text-white"
-                      >
-                        Description
-                      </Label>
-                      <Textarea
-                        id="description"
-                        name="description"
-                        rows={3}
-                        value={formData.description}
-                        onChange={handleInputChange}
-                        className="bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
-                        placeholder="Enter meeting description"
-                      />
-                    </div>
-
-                    <div className="flex justify-end space-x-2 pt-4">
-                      <Button
-                        type="button"
-                        variant="outline"
-                        onClick={() => {
-                          setFormData({
-                            title: "",
-                            name: "",
-                            date: "",
-                            time: "",
-                            attendees: "",
-                            description: "",
-                          });
-                          setErrors({});
-                          setIsOpen(false);
-                        }}
-                      >
-                        Cancel
-                      </Button>
-                      <Button type="submit">Send</Button>
-                    </div>
-                  </form>
+          {isSubmitted ? (
+            <div className="text-center py-8">
+              <p className="text-green-600 dark:text-green-400 font-medium">
+                Meeting scheduled!
+              </p>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                Invites will be sent to attendees
+              </p>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <Label
+                  htmlFor="title"
+                  className="text-gray-900 dark:text-white"
+                >
+                  Meeting Title
+                </Label>
+                <Input
+                  id="title"
+                  name="title"
+                  value={formData.title}
+                  onChange={handleInputChange}
+                  className={`${
+                    errors.title ? "border-red-500" : ""
+                  } bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500`}
+                  placeholder="Enter meeting title"
+                />
+                {errors.title && (
+                  <p className="text-red-500 dark:text-red-400 text-sm mt-1">
+                    {errors.title}
+                  </p>
                 )}
-              </CardContent>
-            </Card>
-          </div>
-        </div>
+              </div>
+
+              <div>
+                <Label htmlFor="name" className="text-gray-900 dark:text-white">
+                  Name
+                </Label>
+                <Input
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  className={`${
+                    errors.title ? "border-red-500" : ""
+                  } bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500`}
+                  placeholder="Enter name"
+                />
+                {errors.name && (
+                  <p className="text-red-500 dark:text-red-400 text-sm mt-1">
+                    {errors.name}
+                  </p>
+                )}
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <Label
+                    htmlFor="date"
+                    className="text-gray-900 dark:text-white"
+                  >
+                    Date
+                  </Label>
+                  <Input
+                    id="date"
+                    name="date"
+                    type="date"
+                    value={formData.date}
+                    onChange={handleInputChange}
+                    className={`${
+                      errors.date ? "border-red-500" : ""
+                    } bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500`}
+                  />
+                  {errors.date && (
+                    <p className="text-red-500 dark:text-red-400 text-sm mt-1">
+                      {errors.date}
+                    </p>
+                  )}
+                </div>
+                <div>
+                  <Label
+                    htmlFor="time"
+                    className="text-gray-900 dark:text-white"
+                  >
+                    Time
+                  </Label>
+                  <Input
+                    id="time"
+                    name="time"
+                    type="time"
+                    value={formData.time}
+                    onChange={handleInputChange}
+                    className={`${
+                      errors.time ? "border-red-500" : ""
+                    } bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500`}
+                  />
+                  {errors.time && (
+                    <p className="text-red-500 dark:text-red-400 text-sm mt-1">
+                      {errors.time}
+                    </p>
+                  )}
+                </div>
+              </div>
+
+              <div>
+                <Label
+                  htmlFor="attendees"
+                  className="text-gray-900 dark:text-white"
+                >
+                  Attendees (emails)
+                </Label>
+                <Input
+                  id="attendees"
+                  name="attendees"
+                  value={formData.attendees}
+                  onChange={handleInputChange}
+                  className={`${
+                    errors.attendees ? "border-red-500" : ""
+                  } bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500`}
+                  placeholder="email1@example.com, email2@example.com"
+                />
+                {errors.attendees && (
+                  <p className="text-red-500 dark:text-red-400 text-sm mt-1">
+                    {errors.attendees}
+                  </p>
+                )}
+              </div>
+
+              <div>
+                <Label
+                  htmlFor="description"
+                  className="text-gray-900 dark:text-white"
+                >
+                  Description
+                </Label>
+                <Textarea
+                  id="description"
+                  name="description"
+                  rows={3}
+                  value={formData.description}
+                  onChange={handleInputChange}
+                  className="bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
+                  placeholder="Enter meeting description"
+                />
+              </div>
+
+              <div className="flex justify-end space-x-2 pt-4">
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={() => {
+                    setFormData({
+                      title: "",
+                      name: "",
+                      date: "",
+                      time: "",
+                      attendees: "",
+                      description: "",
+                    });
+                    setErrors({});
+                    setIsOpen(false);
+                  }}
+                >
+                  Cancel
+                </Button>
+                <Button type="submit">Send</Button>
+              </div>
+            </form>
+          )}
+        </DialogContent>
       )}
-    </>
+    </Dialog>
   );
 };
 
