@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 
 const Cursor = () => {
   const theme = useTheme();
-  const [mount, setMount] = useState();
+  const [mount, setMount] = useState(false);
 
   const getCusomColor = () => {
     if (theme.theme === "dark") {
@@ -18,24 +18,27 @@ const Cursor = () => {
   useEffect(() => {
     setMount(true);
   }, []);
+
+  // If not mounted, render nothing
+  if (!mount) {
+    return null;
+  }
+
+  // If mounted, render the CustomCursor
   return (
-    <>
-      {mount && (
-        <CustomCursor
-          targets={[".link"]}
-          customClass="custom-cursor"
-          dimensions={30}
-          fill={getCusomColor()}
-          smoothness={{
-            movement: 0.2,
-            scale: 0.1,
-            opacity: 0.2,
-          }}
-          targetOpacity={0.5}
-          targetScale={2}
-        />
-      )}
-    </>
+    <CustomCursor
+      targets={[".link"]}
+      customClass="custom-cursor"
+      dimensions={30}
+      fill={getCusomColor()}
+      smoothness={{
+        movement: 0.2,
+        scale: 0.1,
+        opacity: 0.2,
+      }}
+      targetOpacity={0.5}
+      targetScale={2}
+    />
   );
 };
 
