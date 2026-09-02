@@ -6,7 +6,7 @@ import { useIsomorphicLayoutEffect } from "../utils";
 import { stagger } from "../animations";
 import Footer from "../components/Footer";
 import Head from "next/head";
-import Cursor from "../components/Cursor";
+
 
 // Local Data
 import data from "../data/portfolio.json";
@@ -63,44 +63,50 @@ export default function Home() {
   const formatedOthers = data.resume.others.join(", ");
 
   return (
-    <div className={`relative ${data.showCursor && "cursor-none"}`}>
-      {data.showCursor && <Cursor />}
+    <div className="relative">
       <Head>
         <title>{data.name}</title>
       </Head>
 
-      <div className="gradient-circle"></div>
-      <div className="gradient-circle-bottom"></div>
+      <div className="site-background"></div>
 
-      <div className="container mx-auto mb-10">
+      <div className="site-grid"></div>
+
+      <div className="gradient-orb gradient-orb--top"></div>
+      <div className="gradient-orb gradient-orb--bottom"></div>
+
+      <div className="site-container">
         <Header
           handleWorkScroll={handleWorkScroll}
           handleAboutScroll={handleAboutScroll}
           handleContactScroll={handleContactScroll}
         />
-        <div className="laptop:mt-20 mt-10">
+        <section className="relative flex min-h-[70vh] flex-col justify-center pt-16 laptop:min-h-[78vh]">
           <div className="mt-5">
             <h1
               ref={textOne}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-4/5 mob:w-full laptop:w-4/5"
+              className="font-display text-4xl font-medium tracking-tight tablet:text-6xl laptop:text-7xl laptopl:text-8xl"
             >
               {data.headerTaglineOne}
             </h1>
+
             <h1
               ref={textTwo}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
+              className="gradient-text font-display text-4xl font-medium tracking-tight tablet:text-6xl laptop:text-7xl laptopl:text-8xl"
             >
               {data.headerTaglineTwo}
             </h1>
+
             <h1
               ref={textThree}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
+              className="font-display text-4xl font-medium tracking-tight tablet:text-6xl laptop:text-7xl laptopl:text-8xl"
             >
               {data.headerTaglineThree}
             </h1>
+
             <h1
               ref={textFour}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
+              className="font-display text-4xl font-medium tracking-tight tablet:text-6xl laptop:text-7xl laptopl:text-8xl"
             >
               {data.headerTaglineFour}
             </h1>
@@ -108,7 +114,8 @@ export default function Home() {
 
           {/* <Socials className="mt-2 laptop:mt-5" /> */}
           <SocialMediaIcons size="30" />
-        </div>
+        </section>
+
         <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={workRef}>
           <h1 className="text-2xl text-bold">Work.</h1>
 
