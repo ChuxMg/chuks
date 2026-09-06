@@ -1,17 +1,22 @@
 {
   "name": "Chuks",
   "lName": "Mgbojikwe",
-  "headerTaglineOne": "Hello",
-  "headerTaglineTwo": "I'm Chuks Mgbojikwe",
-  "headerTaglineThree": "Web Developer",
-  "headerTaglineFour": " based in Abuja, Nigeria.",
+  "headerTaglineOne": "Hello, I'm Chuks Mgbojikwe.",
+  "headerTaglineTwo": "I build digital experiences",
+  "headerTaglineThree": "for the web and beyond.",
+  "headerTaglineFour": "Based in Abuja, Nigeria.",
   "showCursor": false,
   "showBlog": false,
   "darkMode": true,
   "showResume": true,
   "resumePhoto": "images/chux-profile-photo.png",
   "socials": [
-    { "id": "1", "title": "Github", "link": "https://github.com/ChuxMg", "icon": "logo-github" },
+    {
+      "id": "1",
+      "title": "Github",
+      "link": "https://github.com/ChuxMg",
+      "icon": "logo-github"
+    },
     {
       "id": "2",
       "title": "LinkedIn",
@@ -40,66 +45,53 @@
   "projects": [
     {
       "id": "1",
+      "title": "Quick Cart",
+      "description": "Ecommerce Web App",
+      "type": "desktop",
+      "imageSrc": "images/quickcart-app.png",
+      "url": "https://github.com/ChuxMg/quickcart"
+    },
+    {
+      "id": "2",
       "title": "Expenses Tracker App",
       "description": "Web Design and Development",
+      "type": "desktop",
       "imageSrc": "images/expenses-tracker-app.png",
       "url": "https://github.com/ChuxMg/expense-tracker-app-nextjs"
     },
     {
-      "id": "2",
-      "title": "Recipe Book - Meals App",
-      "description": "Expo App",
-      "imageSrc": "images/recipe-app.png",
-      "url": "https://github.com/ChuxMg/MealsApp"
-    },
-    {
       "id": "3",
-      "title": "Favorite Places App",
+      "title": "Ryde App",
       "description": "Expo App",
-      "imageSrc": "images/favorite-places-app.jpeg",
-      "url": "https://github.com/ChuxMg/Favorite-Places-App"
+      "type": "mobile",
+      "imageSrc": "images/uber-clone-app.png",
+      "url": "https://github.com/ChuxMg/uber-clone-app"
     },
+
     {
       "id": "4",
-      "title": "Quick Cart",
-      "description": "Ecommerce Web App",
-      "imageSrc": "images/quickcart-app.png",
-      "url": "https://github.com/ChuxMg/quickcart"
+      "title": "Culinary Craft App",
+      "description": "Expo App",
+      "type": "mobile",
+      "imageSrc": "images/recipe-app.png",
+      "url": "https://github.com/ChuxMg/MealsApp"
     },
     {
       "id": "5",
       "title": "Co-Banking",
       "description": "Web Design & Development",
+      "type": "desktop",
       "imageSrc": "images/banking-app-2.png",
       "url": "https://github.com/ChuxMg/co_banking"
     },
+
     {
       "id": "6",
-      "title": "Admin Dashboard",
-      "description": "Web Design & Development",
-      "imageSrc": "images/admin-dashboard.png",
-      "url": "https://github.com/ChuxMg/admin-dashboard"
-    },
-    {
-      "id": "7",
-      "title": "Goal App",
-      "description": "Expo App",
-      "imageSrc": "images/goal-app.png",
-      "url": "https://github.com/ChuxMg/GoalApp"
-    },
-    {
-      "id": "8",
       "title": "Mobile App - Aora",
       "description": "Expo App",
+      "type": "mobile",
       "imageSrc": "images/mobile-app-aora-3.jpeg",
       "url": "https://github.com/ChuxMg/MobileApp-Aora-ReactNative"
-    },
-    {
-      "id": "9",
-      "title": "Uber Clone App",
-      "description": "Expo App",
-      "imageSrc": "images/uber-clone-app.png",
-      "url": "https://github.com/ChuxMg/uber-clone-app"
     }
   ],
   "services": [
@@ -115,39 +107,189 @@
     }
   ],
   "aboutpara": "My professional approach is characterized by a strong emphasis on analysis and a commitment to optimizing time management in executing my responsibilities. I have experience collaborating with international teams and demonstrating the ability to perform exceptionally in independent work settings.",
-  "skillspara": "Familiar with HTML, CSS, Javascript, jQuery, Node.js, Express.js, EJS, Github, React, React Native, MongoDB, PostgreSQL, API, Next.js, TypeScript, and Remix.js.",
-  "resume": {
-    "tagline": "I am a dynamic, detail-oriented web developer passionate about creating responsive, user-friendly websites. I seek to leverage my expertise in HTML, CSS, JavaScript, TypeScript, React, React Native, and modern frameworks to deliver innovative digital solutions that enhance user experience and drive business growth.",
-    "description": "Eager to contribute to a collaborative team environment while continuously learning and adapting to new technologies.",
-    "experiences": [
-      {
-        "id": "1",
-        "dates": "March 2022 - Present",
-        "type": "Full Time",
-        "position": "Frontend Engineer",
-        "bullets": "Worked on the frontend of React, and React Native applications"
-      }
-    ],
-    "education": {
-      "universityName": "University Of Benin",
-      "universityDate": "2015",
-      "universityPara": "Bachelors of Science, Government Management"
-    },
-    "languages": ["Javascript", "HTML5", "CSS", "Typescript"],
-    "frameworks": [
+  "skills": {
+    "frontend": [
+      "JavaScript",
+      "TypeScript",
+      "HTML5",
+      "CSS",
       "React",
       "React Native",
       "Next.js",
+      "Vue.js"
+    ],
+    "backend": [
       "Node.js",
       "Express.js",
-      "Remix.js",
-      "jQuery",
-      "API",
-      "OAuth",
       "PostgreSQL",
       "MongoDB",
-      "Prisma"
+      "Prisma",
+      "API",
+      "OAuth"
     ],
-    "others": ["Figma", "AdobeXD", "CorelDraw"]
+    "tools": ["Git", "GitHub", "Figma", "Adobe XD", "CorelDraw"]
+  },
+  "skillspara": "Familiar with HTML, CSS, Javascript, jQuery, Node.js, Express.js, EJS, Github, React, React Native, MongoDB, PostgreSQL, API, Next.js, TypeScript, and Remix.js.",
+  "resume": {
+    "tagline": "Web Developer",
+
+    "description": "Dynamic, results-driven Web Developer with hands-on experience, currently contributing to cross-functional feature deployments at SkilledUp Life. Proficient across both the MERN and PERN ecosystems, maintaining a comprehensive grasp of backend logic engineering, database integration, and UI frameworks including Vue.js, React, Next.js, Node.js, Prisma, and PostgreSQL. Previously served as a Project Manager, leading multi-stakeholder technical squads and managing complex infrastructure. Proven track record of shipping scalable web applications across e-commerce and mobile platforms. Passionate about technical execution and agile team collaboration to deliver production-ready software solutions.",
+
+    "contact": {
+      "location": "Abuja, Nigeria",
+      "phone": "+234 803 657 0964",
+      "email": "chuxmgbojikwe@gmail.com",
+      "linkedin": "https://linkedin.com/in/chuks-mgbojikwe",
+      "github": "https://github.com/ChuxMg"
+    },
+
+    "technicalSkills": {
+      "Frontend Development": [
+        "HTML",
+        "CSS",
+        "JavaScript (ES6+)",
+        "TypeScript",
+        "React",
+        "React Native (Expo)",
+        "Next.js",
+        "Vue.js",
+        "Remix.js",
+        "jQuery",
+        "EJS",
+        "Shadcn UI"
+      ],
+
+      "Backend Development": [
+        "Node.js",
+        "Express.js",
+        "REST-API",
+        "Socket.IO",
+        "OpenAI API"
+      ],
+
+      "Database & ORM": ["PostgreSQL", "MongoDB", "Neon", "Prisma"],
+
+      "Design & Prototyping": ["Figma", "Adobe XD"],
+
+      "Version Control": ["Git", "GitHub"]
+    },
+
+    "certifications": [
+      {
+        "provider": "Udemy",
+        "type": "Certificate of Completion",
+        "title": "Next.js E-commerce Shopping Platform from Scratch",
+        "year": "2025"
+      },
+      {
+        "provider": "Udemy",
+        "type": "Certificate of Completion",
+        "title": "React Native – The Practical Guide",
+        "year": "2024"
+      },
+      {
+        "provider": "Udemy",
+        "type": "Certificate of Completion",
+        "title": "React – The Complete Guide (incl. React Router & Redux)",
+        "year": "2024"
+      },
+      {
+        "provider": "Udemy",
+        "type": "Certificate of Completion",
+        "title": "Remix.js – The Practical Guide",
+        "year": "2024"
+      },
+      {
+        "provider": "Udemy",
+        "type": "Certificate of Completion",
+        "title": "Figma UI/UX Design Essentials",
+        "year": "2024"
+      },
+      {
+        "provider": "Udemy",
+        "type": "Certificate of Completion",
+        "title": "The Complete Web Development Bootcamp",
+        "year": "2024"
+      },
+      {
+        "provider": "Udemy",
+        "type": "Certificate of Completion",
+        "title": "Complete Web & Mobile Designer: UI/UX, Figma",
+        "year": "2022"
+      }
+    ],
+
+    "languages": [
+      {
+        "name": "English",
+        "proficiency": "Fluent"
+      }
+    ],
+
+    "experiences": [
+      {
+        "id": "1",
+        "dates": "Present",
+        "type": "Part-Time",
+        "position": "Front-End Developer (Vue.js)",
+        "company": "SkilledUp Life",
+        "location": "Manchester, UK",
+        "workMode": "Remote",
+        "bullets": [
+          "Developed and optimized reusable UI kit components using Vue 3, Vite, and custom layout styling properties",
+          "Resolved validation bugs and enforced strict MIME-type guards on file uploads to secure frontend entry paths",
+          "Managed application state transitions and conditional routing using Pinia and Vue Router systems",
+          "Synchronized local development workspaces using pnpm and streamlined codebase integration via remote Git branches"
+        ]
+      },
+
+      {
+        "id": "2",
+        "dates": "2022–2024",
+        "type": "Full Time",
+        "position": "Front End Developer",
+        "company": "Jiwec Int’l Ltd.",
+        "location": "Abuja, Nigeria",
+        "workMode": "Remote",
+        "bullets": [
+          "Built QuickCart e-commerce app with secure auth, Stripe/PayPal integration, and scalable backend",
+          "Engineered real-time AI chat app using Vue.js, Socket.IO, and OpenAI API for smart conversations",
+          "Designed expense tracker with custom REST APIs and persistent storage using Prisma and Neon",
+          "Developed reusable UI components and dynamic pages with React, Shadcn UI, and REST APIs",
+          "Implemented optimized backend services using Node.js, Express.js, and efficient schema design",
+          "Led cross-device testing, debugging, and deployment to ensure performance and responsiveness"
+        ]
+      },
+
+      {
+        "id": "3",
+        "dates": "2013–2016",
+        "type": "Full Time",
+        "position": "Project Manager",
+        "company": "Amineru Construction",
+        "location": "Lagos, Nigeria",
+        "workMode": "On-site",
+        "bullets": [
+          "Oversaw site coordination and contractor collaboration at Lakowe Lakes Golf Estate (ARM, Arbico)",
+          "Directed planning and execution tasks for 200 room hotel construction in, Yenagoa (Arbico)"
+        ]
+      }
+    ],
+
+    "education": {
+      "universityName": "University of Benin",
+      "universityLocation": "Benin City, Nigeria",
+      "universityDate": "2015",
+      "degree": "Bachelor of Science (B.Sc)",
+      "field": "Local Government Administration"
+    },
+
+    "organizations": [
+      {
+        "title": "Associate Member",
+        "organization": "Chartered Institute of Public Management of Nigeria",
+        "abbreviation": "CIPM"
+      }
+    ]
   }
 }

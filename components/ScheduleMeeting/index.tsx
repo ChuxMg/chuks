@@ -11,7 +11,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-
 import ScheduleButton from "../ScheduleButton/Index";
 
 type FormData = {
@@ -37,9 +36,7 @@ const initialFormData: FormData = {
 const ScheduleMeeting = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-
   const [formData, setFormData] = useState<FormData>(initialFormData);
-
   const [errors, setErrors] = useState<FormErrors>({});
 
   const validateForm = (): boolean => {
@@ -133,36 +130,61 @@ const ScheduleMeeting = () => {
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <ScheduleButton handleClick={() => setIsOpen(true)} />
-
       {isOpen && (
-        <DialogContent className="sm:max-w-[425px]">
-          <DialogHeader>
-            <DialogTitle>Schedule Meeting</DialogTitle>
+        <DialogContent
+          className="
+          max-h-[90vh]
+          overflow-y-auto
+          border
+          theme-border
+          theme-surface
+          bg-zinc-950/100  {/* 1. Explicitly forces an opaque dark background */}
+          backdrop-blur-md {/* 2. Diffuses background elements smoothly */}
+          theme-primary
+          shadow-2xl
+          transition-colors
+          duration-300
+          sm:max-w-[520px]
+        "
+        >
+          <DialogHeader className="border-b theme-border pb-6">
+            <p className="text-xs uppercase tracking-[0.3em] theme-muted">
+              Start a conversation
+            </p>
 
-            <DialogDescription>
-              Schedule a meeting with me. Looking forward to our conversation!
+            <DialogTitle className="mt-3 font-display text-2xl font-medium tracking-tight theme-primary tablet:text-3xl">
+              Schedule a meeting
+            </DialogTitle>
+
+            <DialogDescription className="mt-2 max-w-md text-sm leading-6 theme-secondary">
+              Tell me a little about what you&apos;re working on and when
+              you&apos;d like to connect.
             </DialogDescription>
           </DialogHeader>
 
           {isSubmitted ? (
-            <div className="py-8 text-center">
-              <p className="font-medium text-green-600 dark:text-green-400">
-                Meeting scheduled!
+            <div className="py-12 text-center">
+              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border theme-border theme-soft-surface">
+                <span className="text-lg theme-primary">✓</span>
+              </div>
+
+              <p className="mt-5 font-medium theme-primary">
+                Meeting request prepared.
               </p>
 
-              <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                Invites will be sent to attendees
+              <p className="mt-2 text-sm leading-6 theme-secondary">
+                Your email client should open with the meeting details.
               </p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-6 pt-2">
               {/* Meeting Title */}
               <div>
                 <Label
                   htmlFor="title"
-                  className="text-gray-900 dark:text-white"
+                  className="text-xs uppercase tracking-[0.2em] theme-secondary"
                 >
-                  Meeting Title
+                  Meeting title
                 </Label>
 
                 <Input
@@ -170,23 +192,29 @@ const ScheduleMeeting = () => {
                   name="title"
                   value={formData.title}
                   onChange={handleInputChange}
-                  className={`${
-                    errors.title ? "border-red-500" : ""
-                  } bg-white text-gray-900 placeholder-gray-400 dark:bg-gray-800 dark:text-white dark:placeholder-gray-500`}
-                  placeholder="Enter meeting title"
+                  className={`
+                    mt-2
+                    theme-input
+                    placeholder:text-white/25
+                    transition-colors
+                    duration-300
+                    ${errors.title ? "border-red-500/70" : ""}
+                  `}
+                  placeholder="e.g. Website redesign"
                 />
 
                 {errors.title && (
-                  <p className="mt-1 text-sm text-red-500 dark:text-red-400">
-                    {errors.title}
-                  </p>
+                  <p className="mt-2 text-xs text-red-400">{errors.title}</p>
                 )}
               </div>
 
               {/* Name */}
               <div>
-                <Label htmlFor="name" className="text-gray-900 dark:text-white">
-                  Name
+                <Label
+                  htmlFor="name"
+                  className="text-xs uppercase tracking-[0.2em] theme-secondary"
+                >
+                  Your name
                 </Label>
 
                 <Input
@@ -194,25 +222,28 @@ const ScheduleMeeting = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  className={`${
-                    errors.name ? "border-red-500" : ""
-                  } bg-white text-gray-900 placeholder-gray-400 dark:bg-gray-800 dark:text-white dark:placeholder-gray-500`}
-                  placeholder="Enter name"
+                  className={`
+                    mt-2
+                    theme-input
+                    placeholder:text-white/25
+                    transition-colors
+                    duration-300
+                    ${errors.name ? "border-red-500/70" : ""}
+                  `}
+                  placeholder="Enter your name"
                 />
 
                 {errors.name && (
-                  <p className="mt-1 text-sm text-red-500 dark:text-red-400">
-                    {errors.name}
-                  </p>
+                  <p className="mt-2 text-xs text-red-400">{errors.name}</p>
                 )}
               </div>
 
               {/* Date & Time */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-6 tablet:grid-cols-2">
                 <div>
                   <Label
                     htmlFor="date"
-                    className="text-gray-900 dark:text-white"
+                    className="text-xs uppercase tracking-[0.2em] theme-secondary"
                   >
                     Date
                   </Label>
@@ -223,22 +254,25 @@ const ScheduleMeeting = () => {
                     type="date"
                     value={formData.date}
                     onChange={handleInputChange}
-                    className={`${
-                      errors.date ? "border-red-500" : ""
-                    } bg-white text-gray-900 dark:bg-gray-800 dark:text-white`}
+                    className={`
+                      mt-2
+                      theme-input
+                      placeholder:text-white/25
+                      transition-colors
+                      duration-300
+                      ${errors.date ? "border-red-500/70" : ""}
+                    `}
                   />
 
                   {errors.date && (
-                    <p className="mt-1 text-sm text-red-500 dark:text-red-400">
-                      {errors.date}
-                    </p>
+                    <p className="mt-2 text-xs text-red-400">{errors.date}</p>
                   )}
                 </div>
 
                 <div>
                   <Label
                     htmlFor="time"
-                    className="text-gray-900 dark:text-white"
+                    className="text-xs uppercase tracking-[0.2em] theme-secondary"
                   >
                     Time
                   </Label>
@@ -249,15 +283,18 @@ const ScheduleMeeting = () => {
                     type="time"
                     value={formData.time}
                     onChange={handleInputChange}
-                    className={`${
-                      errors.time ? "border-red-500" : ""
-                    } bg-white text-gray-900 dark:bg-gray-800 dark:text-white`}
+                    className={`
+                      mt-2
+                      theme-input
+                      placeholder:text-white/25
+                      transition-colors
+                      duration-300
+                      ${errors.time ? "border-red-500/70" : ""}
+                    `}
                   />
 
                   {errors.time && (
-                    <p className="mt-1 text-sm text-red-500 dark:text-red-400">
-                      {errors.time}
-                    </p>
+                    <p className="mt-2 text-xs text-red-400">{errors.time}</p>
                   )}
                 </div>
               </div>
@@ -266,9 +303,9 @@ const ScheduleMeeting = () => {
               <div>
                 <Label
                   htmlFor="attendees"
-                  className="text-gray-900 dark:text-white"
+                  className="text-xs uppercase tracking-[0.2em] theme-secondary"
                 >
-                  Attendees (emails)
+                  Attendee email
                 </Label>
 
                 <Input
@@ -276,14 +313,23 @@ const ScheduleMeeting = () => {
                   name="attendees"
                   value={formData.attendees}
                   onChange={handleInputChange}
-                  className={`${
-                    errors.attendees ? "border-red-500" : ""
-                  } bg-white text-gray-900 placeholder-gray-400 dark:bg-gray-800 dark:text-white dark:placeholder-gray-500`}
-                  placeholder="email1@example.com, email2@example.com"
+                  className={`
+                    mt-2
+                    theme-input
+                    placeholder:text-white/25
+                    transition-colors
+                    duration-300
+                    ${errors.attendees ? "border-red-500/70" : ""}
+                  `}
+                  placeholder="you@example.com"
                 />
 
+                <p className="mt-2 text-xs theme-muted">
+                  Separate multiple email addresses with commas.
+                </p>
+
                 {errors.attendees && (
-                  <p className="mt-1 text-sm text-red-500 dark:text-red-400">
+                  <p className="mt-2 text-xs text-red-400">
                     {errors.attendees}
                   </p>
                 )}
@@ -293,29 +339,54 @@ const ScheduleMeeting = () => {
               <div>
                 <Label
                   htmlFor="description"
-                  className="text-gray-900 dark:text-white"
+                  className="text-xs uppercase tracking-[0.2em] theme-secondary"
                 >
-                  Description
+                  Tell me more
                 </Label>
 
                 <Textarea
                   id="description"
                   name="description"
-                  rows={3}
+                  rows={4}
                   value={formData.description}
                   onChange={handleInputChange}
-                  className="bg-white text-gray-900 placeholder-gray-400 dark:bg-gray-800 dark:text-white dark:placeholder-gray-500"
-                  placeholder="Enter meeting description"
+                  className="
+                    mt-2
+                    resize-none
+                    theme-input
+                    placeholder:text-white/25
+                    transition-colors
+                    duration-300
+                  "
+                  placeholder="What would you like to discuss?"
                 />
               </div>
 
               {/* Actions */}
-              <div className="flex justify-end space-x-2 pt-4">
-                <Button type="button" variant="outline" onClick={handleCancel}>
+              <div className="flex flex-col-reverse gap-3 border-t theme-border pt-6 tablet:flex-row tablet:justify-end">
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={handleCancel}
+                  className="
+                    theme-button-secondary
+                    transition-colors
+                    duration-300
+                  "
+                >
                   Cancel
                 </Button>
 
-                <Button type="submit">Send</Button>
+                <Button
+                  type="submit"
+                  className="
+                    theme-button-primary
+                    transition-colors
+                    duration-300
+                  "
+                >
+                  Prepare meeting request →
+                </Button>
               </div>
             </form>
           )}
