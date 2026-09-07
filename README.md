@@ -1,79 +1,242 @@
-![thumbnail](https://user-images.githubusercontent.com/16558205/180779213-ea740975-3df1-460a-a964-0a623ee25872.png)
+# Chuks Mgbojikwe — Developer Portfolio
 
-### Live - https://react-portfolio-template.netlify.app/
+A modern, responsive personal portfolio built with **Next.js**, **React**, **TypeScript**, and **Tailwind CSS**.
 
-### Demo Video - https://www.youtube.com/watch?v=62_HLbx2zLQ&t=9s
+The portfolio is designed to present my work, technical capabilities, services, professional background, and contact information through a clean, minimal interface with a refined dark/light visual system.
 
-### Tutorials
+## Live Portfolio
 
-Youtube - https://www.youtube.com/watch?v=8cmJ2kR4SpM
+**Portfolio:**  
+https://chuks-mgbojikwe.vercel.app
 
-Blog - https://blog.chetanverma.com/how-to-build-a-portfolio-website-using-nextjs-and-tailwindcss
+---
 
-### Features - 
+## Overview
 
-- Modern Stack (Next.js + TailwindCSS)
-- Minimal Design
-- Easy To Browse
-- Easy To Customize your details With GUI
-- Blog Crud (Create, Read, Update, Delete blog with easy to use UI).
-- Dark Mode
+This project is my personal developer portfolio and professional online presence.
 
+It showcases:
 
-### Sections
+- Professional introduction
+- Selected web and mobile projects
+- Services and areas of expertise
+- Technical skills
+- Professional background
+- About section
+- Contact information
+- Social profiles
+- Resume/CV
+- Responsive layouts for desktop, tablet, and mobile
+- Dark and light themes
 
-- Header
-- Work
-- Services
-- About
-- Contact
-- Markdown Blog
+The portfolio was designed with a focus on **clarity, usability, responsive behavior, and visual personality** while avoiding the common template-like appearance of developer portfolios.
 
+---
 
-### How To Use
+## Features
 
-- Clone this repo
-- run `yarn`
-- `yarn dev`
+### Responsive Design
 
+The portfolio is designed to work across:
 
-### How To Deploy - 
+- Desktop
+- Laptop
+- Tablet
+- Mobile devices
 
-- There are many ways to Deploy this repo.
-- here we are gonna use netlify
-- Login into netlify with github
-- after login select the forked repo or the repo you want to deploy
-- after selecting netlify will automatially deploy your website.
+Layouts, typography, spacing, navigation, project cards, and content sections adapt to different screen sizes.
 
-Quickes way to deploy this repo - 
+### Dark & Light Theme
 
-[![Deploy To Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/chetanverma16/react-portfolio-template)
+The site supports both dark and light visual themes.
 
+The theme system uses CSS variables so that colors remain consistent across the application.
 
-### How To Contribute - 
+The design system includes variables for:
 
-I would be very happy to review your PRs and all the awesome things that you can improve on this portfolio.
+- Primary background
+- Secondary background
+- Primary text
+- Secondary text
+- Muted text
+- Accent colors
+- Borders
+- Buttons
+- Soft surfaces
 
+### Project Showcase
 
-### Tech Stack Used - 
+The Work section presents selected projects using a visual project-card system.
+
+Projects can be represented as:
+
+- Desktop/web applications
+- Mobile applications
+
+The project presentation uses device-oriented visual framing to make the distinction between web and mobile work clearer.
+
+### Resume
+
+The portfolio includes a dedicated `/resume` page.
+
+The resume is designed as an A4-style professional document with a two-column layout.
+
+#### Sidebar
+
+- Profile photo
+- Contact information
+- Technical skills
+- Licenses & certifications
+- Language
+
+#### Main Content
+
+- Professional profile
+- Professional experience
+- Education
+- Professional organizations
+
+The resume also includes a print-friendly **Download PDF** action using the browser's print functionality.
+
+### Services
+
+The Services section communicates the areas in which I can contribute, including:
+
+- Frontend Engineering
+- Web & Mobile Development
+- Product & Interface Design
+- Backend & API Integration
+
+### Technical Skills
+
+The portfolio presents technical capabilities across several areas.
+
+#### Frontend Development
+
+- HTML
+- CSS
+- JavaScript (ES6+)
+- TypeScript
+- React
+- React Native
+- Expo
 - Next.js
-- TailwindCSS
+- Vue.js
+- Remix.js
+- jQuery
+- EJS
+- Shadcn UI
 
+#### Backend Development
 
-### Thanks
+- Node.js
+- Express.js
+- REST API
+- Socket.IO
+- OpenAI API
 
-If you liked this portfolio template, don't forget to give it a ⭐.
+#### Database & ORM
 
-## Awesome Contributors
-[@Aryan3212](https://github.com/Aryan3212) [@achu-krishna](https://github.com/achu-krishna)
+- PostgreSQL
+- MongoDB
+- Neon
+- Prisma
 
-## Supporting
-Many hours of hard work have gone into this project. Your support will be very appreciated!
+#### Design & Prototyping
 
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/chetanverma)
+- Figma
 
+#### Version Control
 
+- Git
+- GitHub
 
+---
 
+# Technology Stack
 
+## Frontend
 
+- [Next.js](https://nextjs.org/)
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+
+## Styling
+
+- Tailwind CSS
+- Custom CSS
+- CSS variables
+- Responsive utility classes
+
+## Animation & Interaction
+
+- GSAP
+- CSS transitions
+- CSS transforms
+- Hover interactions
+- Responsive navigation interactions
+
+## Theme
+
+- `next-themes`
+
+## Development Tools
+
+- Node.js
+- npm
+- Git
+- GitHub
+- VS Code
+
+## Deployment
+
+- Vercel
+
+---
+
+# Project Structure
+
+The project follows the Next.js Pages Router architecture.
+
+```text
+.
+├── components/
+│   ├── Button/
+│   ├── Footer/
+│   ├── Header/
+│   ├── ScheduleButton/
+│   ├── ScheduleMeeting/
+│   ├── Socials/
+│   ├── WorkCard/
+│   └── ...
+│
+├── data/
+│   └── portfolio.json
+│
+├── pages/
+│   ├── _app.tsx
+│   ├── index.tsx
+│   ├── resume.tsx
+│   └── ...
+│
+├── public/
+│   ├── images/
+│   └── ...
+│
+├── styles/
+│   ├── globals.css
+│   └── markdown.css
+│
+├── types/
+│   └── ...
+│
+├── utils/
+│   └── ...
+│
+├── next.config.js
+├── package.json
+├── postcss.config.js
+├── tailwind.config.js
+├── tsconfig.json
+└── README.md

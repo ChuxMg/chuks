@@ -1,18 +1,19 @@
 import React from "react";
 import myData from "../../data/portfolio.json";
+import Image from "next/image";
 
-const ResumePhoto = () => {
+
+export default function ResumePhoto() {
   return (
     <div className="flex flex-col mb-4">
-      <img
+      <Image
         src={myData.resumePhoto}
         alt="chuks-img"
-        className="w-36 h-36 rounded-full shadow-lg"
+        width={144}
+        height={144}
+        className="rounded-full shadow-lg object-cover"
       />
-      {/* <p className="mt-4 text-lg font-bold text-gray-800">Your Name</p>{" "}
-      Replace with your name */}
+      {/* <p className="mt-4 text-lg font-bold text-gray-800">Your Name</p> */}
     </div>
   );
-};
-
-export default ResumePhoto;
+}
