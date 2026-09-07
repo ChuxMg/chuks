@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 interface WorkCardProps {
   index: number;
@@ -36,7 +37,7 @@ const WorkCard: React.FC<WorkCardProps> = ({
     >
       {/* Device presentation */}
       <div
-        className={`relative flex min-h-[320px] items-center justify-center overflow-hidden rounded-2xl bg-white/[0.025] p-6 tablet:min-h-[420px] laptop:p-10 ${
+        className={`relative flex min-h-[320px] items-center justify-center overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-[var(--surface-soft)] p-6 transition-colors duration-500 tablet:min-h-[420px] laptop:p-10 ${
           isMobile ? "laptop:min-h-[520px]" : ""
         }`}
       >
@@ -44,16 +45,18 @@ const WorkCard: React.FC<WorkCardProps> = ({
           /* Mobile device */
           <div className="relative w-[170px] transition-all duration-700 ease-out group-hover:-translate-y-2 group-hover:rotate-[-1deg] tablet:w-[210px] laptop:w-[230px]">
             {/* Phone body */}
-            <div className="relative rounded-[2.5rem] border border-white/15 bg-[#111116] p-2 shadow-[0_30px_80px_rgba(0,0,0,0.45)] transition-all duration-700 group-hover:shadow-[0_40px_100px_rgba(0,0,0,0.6)]">
+            <div className="relative rounded-[2.5rem] border border-[var(--border-strong)] bg-[var(--bg-secondary)] p-2 shadow-[0_30px_80px_rgba(0,0,0,0.28)] transition-all duration-700 group-hover:shadow-[0_40px_100px_rgba(0,0,0,0.4)]">
               {/* Camera / speaker area */}
               <div className="absolute left-1/2 top-2 z-10 h-5 w-16 -translate-x-1/2 rounded-full bg-black" />
 
               {/* Screen */}
-              <div className="aspect-[9/19.5] overflow-hidden rounded-[2rem] bg-black">
-                <img
+              <div className="relative aspect-[9/19.5] overflow-hidden rounded-[2rem] bg-black">
+                <Image
                   src={`/${img}`}
                   alt={name || "Mobile project"}
-                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
                 />
               </div>
 
@@ -67,22 +70,24 @@ const WorkCard: React.FC<WorkCardProps> = ({
         ) : (
           /* Desktop / browser device */
           <div className="relative w-full max-w-4xl transition-all duration-700 ease-out group-hover:-translate-y-2">
-            <div className="overflow-hidden rounded-xl border border-white/15 bg-[#111116] shadow-[0_30px_80px_rgba(0,0,0,0.4)] transition-shadow duration-700 group-hover:shadow-[0_40px_100px_rgba(0,0,0,0.55)]">
+            <div className="overflow-hidden rounded-xl border border-[var(--border-strong)] bg-[var(--bg-secondary)] shadow-[0_30px_80px_rgba(0,0,0,0.28)] transition-all duration-700 group-hover:shadow-[0_40px_100px_rgba(0,0,0,0.4)]">
               {/* Browser chrome */}
-              <div className="flex h-9 items-center gap-1.5 border-b border-white/10 bg-white/[0.035] px-4">
-                <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
-                <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
-                <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+              <div className="flex h-9 items-center gap-1.5 border-b border-[var(--border-subtle)] bg-[var(--surface-soft)] px-4">
+                <span className="h-2.5 w-2.5 rounded-full border border-[var(--border-strong)] bg-[var(--text-muted)]/40" />
+                <span className="h-2.5 w-2.5 rounded-full border border-[var(--border-strong)] bg-[var(--text-muted)]/40" />
+                <span className="h-2.5 w-2.5 rounded-full border border-[var(--border-strong)] bg-[var(--text-muted)]/40" />
 
-                <div className="ml-4 h-5 flex-1 rounded-md border border-white/5 bg-white/[0.025]" />
+                <div className="ml-4 h-5 flex-1 rounded-md border border-[var(--border-subtle)] bg-[var(--bg-primary)]/40" />
               </div>
 
               {/* Browser viewport */}
-              <div className="aspect-[16/10] overflow-hidden bg-black">
-                <img
+              <div className="relative aspect-[16/10] overflow-hidden bg-black">
+                <Image
                   src={`/${img}`}
                   alt={name || "Web project"}
-                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
                 />
               </div>
             </div>
@@ -90,12 +95,12 @@ const WorkCard: React.FC<WorkCardProps> = ({
         )}
 
         {/* Project number */}
-        <div className="absolute left-5 top-5 flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-black/30 text-xs text-white/60 backdrop-blur-md">
+        <div className="absolute left-5 top-5 flex h-10 w-10 items-center justify-center rounded-full border border-[var(--border-subtle)] bg-[var(--bg-primary)]/70 text-xs text-[var(--text-secondary)] backdrop-blur-md transition-colors duration-300">
           {String(index).padStart(2, "0")}
         </div>
 
         {/* View indicator */}
-        <div className="absolute bottom-5 right-5 flex h-10 w-10 translate-x-2 items-center justify-center rounded-full border border-white/15 bg-black/30 text-white/80 opacity-0 backdrop-blur-md transition-all duration-500 group-hover:translate-x-0 group-hover:opacity-100">
+        <div className="absolute bottom-5 right-5 flex h-10 w-10 translate-x-2 items-center justify-center rounded-full border border-[var(--border-subtle)] bg-[var(--bg-primary)]/70 text-[var(--text-primary)] opacity-0 backdrop-blur-md transition-all duration-500 group-hover:translate-x-0 group-hover:opacity-100">
           ↗
         </div>
       </div>
@@ -107,12 +112,12 @@ const WorkCard: React.FC<WorkCardProps> = ({
             {name || "Project Name"}
           </h3>
 
-          <p className="mt-2 text-sm uppercase tracking-[0.18em] text-white/40">
+          <p className="mt-2 text-sm uppercase tracking-[0.18em] theme-muted">
             {description || "Project"}
           </p>
         </div>
 
-        <span className="mt-1 text-sm text-white/25 transition-colors duration-300 group-hover:text-white/60">
+        <span className="mt-1 text-sm theme-muted transition-colors duration-300 group-hover:text-[var(--text-primary)]">
           View
         </span>
       </div>

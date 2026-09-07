@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 import Header from "../components/Header";
 import data from "../data/portfolio.json";
+import Image from "next/image";
 
 interface Certification {
   provider: string;
@@ -158,9 +159,13 @@ const Resume = () => {
             >
               {/* Profile Photo Wrapper */}
               <div className="resume-photo">
-                <img
+                <Image
                   src="/images/chux-profile-photo.png"
                   alt={`${data.name} ${data.lName}`}
+                  width={150}
+                  height={150}
+                  priority
+                  className="rounded-full object-cover"
                 />
               </div>
 

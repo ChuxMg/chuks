@@ -21,13 +21,13 @@ const Footer = () => {
             </div>
 
             <h2 className="mt-8 max-w-4xl text-4xl font-medium leading-[0.98] tracking-[-0.035em] text-[var(--text-primary)] transition-colors duration-300 tablet:text-6xl laptop:text-7xl laptopl:text-[7rem]">
-              Let's build
+              Let&apos;s build
               <br />
               something meaningful.
             </h2>
 
             <p className="mt-8 max-w-xl text-sm leading-7 text-[var(--text-secondary)] transition-colors duration-300 laptop:text-base">
-              Have an idea, a product, or a problem you'd like to solve? I'm
+              Have an idea, a product, or a problem you&apos;d like to solve? I&apos;m
               open to thoughtful conversations, interesting collaborations, and
               opportunities to build useful digital experiences.
             </p>
@@ -41,7 +41,7 @@ const Footer = () => {
               </p>
 
               <p className="mt-4 text-sm leading-6 text-[var(--text-secondary)]">
-                Tell me what you're working on and let's see where we can take
+                Tell me what you&apos;re working on and let&apos;s see where we can take
                 it.
               </p>
 

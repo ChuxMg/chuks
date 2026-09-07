@@ -134,25 +134,24 @@ const ScheduleMeeting = () => {
         <DialogContent
           className="
           max-h-[90vh]
-          overflow-y-auto
-          border
-          theme-border
-          theme-surface
-          bg-zinc-950/100  {/* 1. Explicitly forces an opaque dark background */}
-          backdrop-blur-md {/* 2. Diffuses background elements smoothly */}
-          theme-primary
-          shadow-2xl
-          transition-colors
-          duration-300
-          sm:max-w-[520px]
+    overflow-y-auto
+    border
+    border-[var(--border-strong)]
+    bg-[var(--bg-secondary)]
+    text-[var(--text-primary)]
+    shadow-[0_30px_100px_rgba(0,0,0,0.35)]
+    backdrop-blur-xl
+    transition-all
+    duration-300
+    sm:max-w-[520px]
         "
         >
-          <DialogHeader className="border-b theme-border pb-6">
+          <DialogHeader className="border-b border-[var(--border-subtle)] pb-6">
             <p className="text-xs uppercase tracking-[0.3em] theme-muted">
               Start a conversation
             </p>
 
-            <DialogTitle className="mt-3 font-display text-2xl font-medium tracking-tight theme-primary tablet:text-3xl">
+            <DialogTitle className="mt-3 font-display text-2xl font-medium tracking-[-0.03em] theme-primary tablet:text-3xl">
               Schedule a meeting
             </DialogTitle>
 
@@ -195,7 +194,7 @@ const ScheduleMeeting = () => {
                   className={`
                     mt-2
                     theme-input
-                    placeholder:text-white/25
+                    placeholder:text-[var(--text-muted)]
                     transition-colors
                     duration-300
                     ${errors.title ? "border-red-500/70" : ""}
@@ -225,7 +224,7 @@ const ScheduleMeeting = () => {
                   className={`
                     mt-2
                     theme-input
-                    placeholder:text-white/25
+                    placeholder:text-[var(--text-muted)]
                     transition-colors
                     duration-300
                     ${errors.name ? "border-red-500/70" : ""}
@@ -257,7 +256,7 @@ const ScheduleMeeting = () => {
                     className={`
                       mt-2
                       theme-input
-                      placeholder:text-white/25
+                      placeholder:text-[var(--text-muted)]
                       transition-colors
                       duration-300
                       ${errors.date ? "border-red-500/70" : ""}
@@ -286,7 +285,7 @@ const ScheduleMeeting = () => {
                     className={`
                       mt-2
                       theme-input
-                      placeholder:text-white/25
+                      placeholder:text-[var(--text-muted)]
                       transition-colors
                       duration-300
                       ${errors.time ? "border-red-500/70" : ""}
@@ -316,7 +315,7 @@ const ScheduleMeeting = () => {
                   className={`
                     mt-2
                     theme-input
-                    placeholder:text-white/25
+                    placeholder:text-[var(--text-muted)]
                     transition-colors
                     duration-300
                     ${errors.attendees ? "border-red-500/70" : ""}
@@ -354,7 +353,7 @@ const ScheduleMeeting = () => {
                     mt-2
                     resize-none
                     theme-input
-                    placeholder:text-white/25
+                    placeholder:text-[var(--text-muted)]
                     transition-colors
                     duration-300
                   "
@@ -363,16 +362,19 @@ const ScheduleMeeting = () => {
               </div>
 
               {/* Actions */}
-              <div className="flex flex-col-reverse gap-3 border-t theme-border pt-6 tablet:flex-row tablet:justify-end">
+              <div className="flex flex-col-reverse gap-3 border-t border-[var(--border-subtle)] pt-6 tablet:flex-row tablet:justify-end">
                 <Button
                   type="button"
                   variant="outline"
                   onClick={handleCancel}
                   className="
-                    theme-button-secondary
-                    transition-colors
-                    duration-300
-                  "
+      theme-button-secondary
+      rounded-full
+      px-5
+      transition-all
+      duration-300
+      hover:-translate-y-0.5
+    "
                 >
                   Cancel
                 </Button>
@@ -380,12 +382,21 @@ const ScheduleMeeting = () => {
                 <Button
                   type="submit"
                   className="
-                    theme-button-primary
-                    transition-colors
-                    duration-300
-                  "
+      theme-button-primary
+      group
+      rounded-full
+      px-5
+      transition-all
+      duration-300
+      hover:-translate-y-0.5
+    "
                 >
-                  Prepare meeting request →
+                  <span className="flex items-center gap-2">
+                    Prepare meeting request
+                    <span className="transition-transform duration-300 group-hover:translate-x-0.5">
+                      →
+                    </span>
+                  </span>
                 </Button>
               </div>
             </form>

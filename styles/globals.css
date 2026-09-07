@@ -836,3 +836,26 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   opacity: 0.25;
   filter: invert(1); /* Keeps the icons visible on a dark background */
 }
+
+
+
+.theme-input {
+  border-color: var(--border-subtle);
+  background: var(--surface-soft);
+  color: var(--text-primary);
+  transition:
+    border-color 300ms ease,
+    background-color 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.theme-input::placeholder {
+  color: var(--text-muted);
+}
+
+.theme-input:focus {
+  border-color: var(--accent-primary);
+  background: var(--bg-secondary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-primary) 10%, transparent);
+  outline: none;
+}

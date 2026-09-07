@@ -176,14 +176,14 @@ export default function Home() {
               </p>
 
               <h2 className="mt-4 text-4xl font-medium tracking-tight tablet:text-5xl laptop:text-6xl">
-                Things I've built
+                Things I&apos;ve built
                 <br />
                 along the way.
               </h2>
             </div>
 
             <p className="max-w-md text-sm leading-6 theme-secondary laptop:text-base">
-              A selection of web and mobile experiences I've designed and
+              A selection of web and mobile experiences I&apos;ve designed and
               developed, from product interfaces to practical applications.
             </p>
           </div>

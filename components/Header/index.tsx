@@ -2,6 +2,7 @@ import { Popover } from "@headlessui/react";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/router";
 import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 import Button from "../Button";
 import data from "../../data/portfolio.json";
@@ -113,12 +114,12 @@ const Header = ({
                         : "border-black/15 bg-black/[0.05] hover:bg-black/[0.1]"
                     }`}
                   >
-                    <img
+                    <Image
                       className="h-5 w-5"
-                      src={`/images/${
-                        theme === "dark" ? "moon.svg" : "sun.svg"
-                      }`}
+                      src={`/images/${theme === "dark" ? "moon.svg" : "sun.svg"}`}
                       alt="Toggle theme"
+                      width={20}
+                      height={20}
                     />
                   </Button>
                 )}
@@ -332,10 +333,12 @@ const Header = ({
 
             {mounted && data.darkMode && (
               <Button type="button" onClick={toggleTheme} classes="ml-2 p-2">
-                <img
-                  className="h-5"
+                <Image
+                  className="h-5 w-auto"
                   src={`/images/${theme === "dark" ? "moon.svg" : "sun.svg"}`}
                   alt="Toggle theme"
+                  width={20}
+                  height={20}
                 />
               </Button>
             )}
@@ -380,10 +383,12 @@ const Header = ({
 
             {mounted && data.darkMode && (
               <Button type="button" onClick={toggleTheme} classes="ml-2 p-2">
-                <img
-                  className="h-5"
+                <Image
+                  className="h-5 w-auto"
                   src={`/images/${theme === "dark" ? "moon.svg" : "sun.svg"}`}
                   alt="Toggle theme"
+                  width={20}
+                  height={20}
                 />
               </Button>
             )}
