@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&display=swap");
+@import "./markdown.css";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import "./markdown.css";
 
 :root {
   --bg-primary: #08080a;
