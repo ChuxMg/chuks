@@ -11,13 +11,13 @@
   --bg-secondary: #101014;
 
   --text-primary: #f5f5f7;
-  --text-secondary: #9b9ba3;
-  --text-muted: #66666f;
+  --text-secondary: #b5b5bf;
+  --text-muted: #898995;
 
   --accent-primary: #a78bfa;
   --accent-secondary: #6366f1;
 
-  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-subtle: rgba(255, 255, 255, 0.13);
 
   --button-primary-bg: #f5f5f7;
   --button-primary-text: #08080a;
@@ -27,8 +27,8 @@
 
   --container-width: 1400px;
 
-  --surface-soft: rgba(255, 255, 255, 0.04);
-  --border-strong: rgba(255, 255, 255, 0.18);
+  --surface-soft: rgba(255, 255, 255, 0.055);
+  --border-strong: rgba(255, 255, 255, 0.24);
 }
 
 html.light {
@@ -36,13 +36,13 @@ html.light {
   --bg-secondary: #ffffff;
 
   --text-primary: #111116;
-  --text-secondary: #4b4b55;
-  --text-muted: #73737d;
+  --text-secondary: #44444d;
+  --text-muted: #60606b;
 
   --accent-primary: #7c3aed;
   --accent-secondary: #4f46e5;
 
-  --border-subtle: rgba(0, 0, 0, 0.1);
+  --border-subtle: rgba(0, 0, 0, 0.14);
 
   --button-primary-bg: #111116;
   --button-primary-text: #ffffff;
@@ -50,8 +50,8 @@ html.light {
   --button-primary-hover-bg: #25252c;
   --button-primary-hover-border: rgba(0, 0, 0, 0.25);
 
-  --surface-soft: rgba(0, 0, 0, 0.04);
-  --border-strong: rgba(0, 0, 0, 0.18);
+  --surface-soft: rgba(0, 0, 0, 0.055);
+  --border-strong: rgba(0, 0, 0, 0.24);
 }
 
 * {
@@ -87,6 +87,11 @@ a {
 button,
 a {
   -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 4px;
 }
 
 /* ---------------------------------------

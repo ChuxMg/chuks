@@ -13,8 +13,6 @@ import Link from "next/link";
 import data from "../data/portfolio.json";
 import SocialMediaIcons from "../components/SocialMediaIcons";
 
-type ProjectType = "desktop" | "mobile";
-
 export default function Home() {
   // Ref
   const workRef = useRef<HTMLDivElement | null>(null);
@@ -174,7 +172,7 @@ export default function Home() {
                       Focus
                     </p>
                     <p className="mt-1 text-sm font-medium tablet:text-base">
-                      Frontend Engineering · Product UI
+                      Frontend Engineering · AI Agents · Agentic Web
                     </p>
                   </div>
                   <span className="hidden rounded-full border border-white/20 bg-black/20 px-3 py-1.5 text-xs backdrop-blur-sm mob:inline-flex">
@@ -184,7 +182,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-
         </section>
 
         {/* Work Section */}
@@ -210,15 +207,16 @@ export default function Home() {
           </div>
 
           <div className="mt-16 grid grid-cols-1 gap-16 tablet:grid-cols-2 laptop:mt-24 laptop:gap-x-8 laptop:gap-y-24">
-            {data.projects.map((project, index) => (
+            {data.projects.map((project) => (
               <WorkCard
                 key={project.id}
-                index={index + 1}
                 img={project.imageSrc}
                 name={project.title}
                 description={project.description}
-                type={project.type as ProjectType}
-                onClick={() => window.open(project.url, "_blank")}
+                summary={project.summary}
+                technologies={project.technologies}
+                type={project.type as "desktop" | "mobile"}
+                url={project.url}
               />
             ))}
           </div>
