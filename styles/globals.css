@@ -829,17 +829,36 @@ html.light .gradient-orb {
 
 
 
-/* Target the internal date/time display elements */
-input[type="date"]::-webkit-datetime-edit,
-input[type="time"]::-webkit-datetime-edit {
-  color: rgba(255, 255, 255, 0.25) !important;
+.meeting-date-time {
+  color-scheme: dark;
 }
 
-/* Optional: Fades out the browser icons (calendar and clock) to match */
-input[type="date"]::-webkit-calendar-picker-indicator,
-input[type="time"]::-webkit-calendar-picker-indicator {
-  opacity: 0.25;
-  filter: invert(1); /* Keeps the icons visible on a dark background */
+html.light .meeting-date-time {
+  color-scheme: light;
+}
+
+.meeting-date-time::-webkit-datetime-edit {
+  color: var(--text-primary);
+}
+
+.meeting-date-time[data-empty="true"]::-webkit-datetime-edit {
+  color: var(--text-muted);
+}
+
+.meeting-date-time::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.7;
+  filter: invert(1);
+  transition: opacity 200ms ease;
+}
+
+html.light .meeting-date-time::-webkit-calendar-picker-indicator {
+  filter: none;
+}
+
+.meeting-date-time:hover::-webkit-calendar-picker-indicator,
+.meeting-date-time:focus-visible::-webkit-calendar-picker-indicator {
+  opacity: 1;
 }
 
 
