@@ -256,11 +256,13 @@ const ScheduleMeeting = () => {
                     className={`
                       mt-2
                       theme-input
+                      meeting-date-time
                       placeholder:text-[var(--text-muted)]
                       transition-colors
                       duration-300
                       ${errors.date ? "border-red-500/70" : ""}
                     `}
+                    data-empty={!formData.date}
                   />
 
                   {errors.date && (
@@ -285,11 +287,13 @@ const ScheduleMeeting = () => {
                     className={`
                       mt-2
                       theme-input
+                      meeting-date-time
                       placeholder:text-[var(--text-muted)]
                       transition-colors
                       duration-300
                       ${errors.time ? "border-red-500/70" : ""}
                     `}
+                    data-empty={!formData.time}
                   />
 
                   {errors.time && (
