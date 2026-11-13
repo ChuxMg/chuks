@@ -10,6 +10,7 @@
   "darkMode": true,
   "showResume": true,
   "resumePhoto": "images/chux-profile-photo.png",
+  "heroImage": "images/chux-profile-hero-photo.png",
   "socials": [
     {
       "id": "1",

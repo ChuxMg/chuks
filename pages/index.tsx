@@ -6,7 +6,8 @@ import { useIsomorphicLayoutEffect } from "../utils";
 import { stagger } from "../animations";
 import Footer from "../components/Footer";
 import Head from "next/head";
-
+import Image from "next/image";
+import Link from "next/link";
 
 // Local Data
 import data from "../data/portfolio.json";
@@ -23,10 +24,6 @@ export default function Home() {
   const servicesRef = useRef<HTMLDivElement | null>(null);
 
   const textOne = useRef<HTMLHeadingElement | null>(null);
-  const textTwo = useRef<HTMLHeadingElement | null>(null);
-  const textThree = useRef<HTMLHeadingElement | null>(null);
-  const textFour = useRef<HTMLHeadingElement | null>(null);
-
 
   // Handling Scroll
   const handleWorkScroll = () => {
@@ -81,7 +78,7 @@ export default function Home() {
 
   useIsomorphicLayoutEffect(() => {
     stagger(
-      [textOne.current, textTwo.current, textThree.current, textFour.current],
+      [textOne.current],
       { y: 40, x: -10, transform: "scale(0.95) skew(10deg)" },
       { y: 0, x: 0, transform: "scale(1)" }
     );
@@ -109,66 +106,90 @@ export default function Home() {
           handleServicesScroll={handleServicesScroll}
           handleSkillsScroll={handleSkillsScroll}
         />
-        <section className="relative flex min-h-[78vh] flex-col justify-center pt-20 laptop:min-h-[85vh]">
-          <div className="max-w-6xl">
-            <p className="mb-6 text-sm uppercase tracking-[0.3em] theme-muted">
+        <section className="relative mx-auto grid min-h-[80vh] w-full max-w-7xl items-center gap-14 overflow-hidden px-4 pb-20 pt-20 tablet:px-8 laptop:grid-cols-[minmax(0,1.15fr)_minmax(340px,0.85fr)] laptop:gap-16 laptop:pb-16 laptop:pt-12">
+          <div className="relative z-10 max-w-3xl">
+            <p className="mb-6 text-xs uppercase tracking-[0.3em] theme-muted tablet:text-sm">
               Frontend Developer · Creative Technologist
             </p>
 
-            <div className="space-y-1">
-              <h1
-                ref={textOne}
-                className="font-display text-3xl font-medium leading-[1.05] tracking-tight tablet:text-5xl laptop:text-6xl laptopl:text-7xl"
-              >
-                {data.headerTaglineOne}
-              </h1>
+            <h1
+              ref={textOne}
+              className="font-display text-4xl font-medium leading-[1.02] tracking-[-0.045em] tablet:text-6xl laptop:text-6xl laptopl:text-7xl"
+            >
+              I build thoughtful{" "}
+              <span className="gradient-text">digital products</span> for web
+              and mobile.
+            </h1>
 
-              <h1
-                ref={textTwo}
-                className="gradient-text font-display text-3xl font-medium leading-[1.05] tracking-tight tablet:text-5xl laptop:text-6xl laptopl:text-7xl"
-              >
-                {data.headerTaglineTwo}
-              </h1>
+            <p className="mt-7 max-w-2xl text-base leading-7 theme-secondary tablet:text-lg tablet:leading-8">
+              I&apos;m Chuks Mgbojikwe, a frontend developer based in Abuja. I
+              create responsive interfaces that combine clear design, reliable
+              engineering, and purposeful interaction.
+            </p>
 
-              <h1
-                ref={textThree}
-                className="font-display text-3xl font-medium leading-[1.05] tracking-tight tablet:text-5xl laptop:text-6xl laptopl:text-7xl"
+            <div className="mt-9 flex flex-col gap-3 mob:flex-row mob:items-center">
+              <button
+                type="button"
+                onClick={handleWorkScroll}
+                className="rounded-full border border-[var(--button-primary-border)] bg-[var(--button-primary-bg)] px-6 py-3 text-sm font-medium text-[var(--button-primary-text)] transition duration-300 hover:-translate-y-0.5 hover:bg-[var(--button-primary-hover-bg)] hover:border-[var(--button-primary-hover-border)]"
               >
-                {data.headerTaglineThree}
-              </h1>
-
-              <h1
-                ref={textFour}
-                className="font-display text-3xl font-medium leading-[1.05] tracking-tight tablet:text-5xl laptop:text-6xl laptopl:text-7xl"
+                View selected work
+              </button>
+              <Link
+                href="/resume"
+                className="rounded-full border border-[var(--border-strong)] px-6 py-3 text-center text-sm font-medium theme-primary transition duration-300 hover:-translate-y-0.5 hover:bg-[var(--surface-soft)]"
               >
-                {data.headerTaglineFour}
-              </h1>
+                View résumé <span aria-hidden="true"></span>
+              </Link>
             </div>
 
-            <div className="mt-10 flex flex-col gap-6 tablet:flex-row tablet:items-center">
-              <p className="max-w-xl text-base leading-7 theme-secondary laptop:text-lg mb-10">
-                I design and build thoughtful digital experiences that combine
-                clean interfaces, strong engineering, and purposeful
-                interaction.
-              </p>
-
-              <div className="theme-divider hidden h-px w-16 tablet:block" />
-            </div>
-
-            <div className="mt-10">
-              {/* <SocialMediaIcons size="28" /> */}
+            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs uppercase tracking-[0.18em] theme-muted">
+              <span className="flex items-center gap-2">
+                <span className="relative flex h-2 w-2" aria-hidden="true">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-50" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+                </span>
+                Available for selected work
+              </span>
+              <span>Abuja, Nigeria · GMT+1</span>
             </div>
           </div>
 
-          <div className="absolute bottom-8 left-0 flex items-center gap-3 text-xs uppercase tracking-[0.25em] theme-muted">
-            <span className="theme-divider h-px w-8" />
-            <span>Scroll to explore</span>
+          <div className="relative mx-auto w-full max-w-[460px] laptop:justify-self-end">
+            <div className="absolute -inset-10 rounded-full bg-[var(--accent-primary)] opacity-[0.12] blur-3xl" />
+            <div className="group relative overflow-hidden rounded-[2rem] border border-[var(--border-subtle)] bg-[var(--bg-secondary)] p-2 shadow-[0_30px_80px_-35px_rgba(0,0,0,0.7)]">
+              <div className="relative aspect-square overflow-hidden rounded-[1.55rem] bg-[var(--surface-soft)]">
+                <Image
+                  src={`/${data.heroImage}`}
+                  alt="Portrait of Chuks Mgbojikwe"
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 38vw, (min-width: 768px) 55vw, 90vw"
+                  className="object-cover object-top grayscale-[15%] transition duration-700 ease-out group-hover:scale-[1.025] group-hover:grayscale-0"
+                />
+                <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4 text-white">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.22em] text-white/60">
+                      Focus
+                    </p>
+                    <p className="mt-1 text-sm font-medium tablet:text-base">
+                      Frontend Engineering · Product UI
+                    </p>
+                  </div>
+                  <span className="hidden rounded-full border border-white/20 bg-black/20 px-3 py-1.5 text-xs backdrop-blur-sm mob:inline-flex">
+                    React · TypeScript
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
+
         </section>
 
         {/* Work Section */}
 
-        <section className="mt-24 px-2 laptop:mt-48 laptop:px-0" ref={workRef}>
+        <section className="mt-12 px-2 laptop:mt-20 laptop:px-0" ref={workRef}>
           <div className="flex flex-col gap-6 laptop:flex-row laptop:items-end laptop:justify-between">
             <div>
               <p className="text-xs uppercase tracking-[0.3em] theme-muted">
