@@ -48,6 +48,8 @@
       "id": "1",
       "title": "Quick Cart",
       "description": "Ecommerce Web App",
+      "summary": "A responsive storefront for browsing products and moving smoothly through the shopping experience.",
+      "technologies": ["Next.js", "React", "Ecommerce"],
       "type": "desktop",
       "imageSrc": "images/quickcart-app.png",
       "url": "https://github.com/ChuxMg/quickcart"
@@ -56,6 +58,8 @@
       "id": "2",
       "title": "Expenses Tracker App",
       "description": "Web Design and Development",
+      "summary": "A personal finance interface for recording transactions and reviewing income and expenses clearly.",
+      "technologies": ["Next.js", "React", "Personal Finance"],
       "type": "desktop",
       "imageSrc": "images/expenses-tracker-app.png",
       "url": "https://github.com/ChuxMg/expense-tracker-app-nextjs"
@@ -64,6 +68,8 @@
       "id": "3",
       "title": "Ryde App",
       "description": "Expo App",
+      "summary": "A mobile ride-booking experience with onboarding, trip discovery, and driver selection flows.",
+      "technologies": ["React Native", "Expo", "Mobile UI"],
       "type": "mobile",
       "imageSrc": "images/uber-clone-app.png",
       "url": "https://github.com/ChuxMg/uber-clone-app"
@@ -73,6 +79,8 @@
       "id": "4",
       "title": "Culinary Craft App",
       "description": "Expo App",
+      "summary": "A mobile recipe browser for discovering meals and following focused cooking details.",
+      "technologies": ["React Native", "Expo", "Recipe Discovery"],
       "type": "mobile",
       "imageSrc": "images/recipe-app.png",
       "url": "https://github.com/ChuxMg/MealsApp"
@@ -81,6 +89,8 @@
       "id": "5",
       "title": "Co-Banking",
       "description": "Web Design & Development",
+      "summary": "A responsive banking interface centered on clear account access and authentication flows.",
+      "technologies": ["React", "Authentication", "Responsive UI"],
       "type": "desktop",
       "imageSrc": "images/banking-app-2.png",
       "url": "https://github.com/ChuxMg/co_banking"
@@ -90,6 +100,8 @@
       "id": "6",
       "title": "Mobile App - Aora",
       "description": "Expo App",
+      "summary": "A mobile media experience for browsing, viewing, and sharing video content.",
+      "technologies": ["React Native", "Expo", "Mobile Media"],
       "type": "mobile",
       "imageSrc": "images/mobile-app-aora-3.jpeg",
       "url": "https://github.com/ChuxMg/MobileApp-Aora-ReactNative"
@@ -132,9 +144,9 @@
   },
   "skillspara": "Familiar with HTML, CSS, Javascript, jQuery, Node.js, Express.js, EJS, Github, React, React Native, MongoDB, PostgreSQL, API, Next.js, TypeScript, and Remix.js.",
   "resume": {
-    "tagline": "Web Developer",
+    "tagline": "Web Engineer & Tech Lead",
 
-    "description": "Dynamic, results-driven Web Developer with hands-on experience, currently contributing to cross-functional feature deployments at SkilledUp Life. Proficient across both the MERN and PERN ecosystems, maintaining a comprehensive grasp of backend logic engineering, database integration, and UI frameworks including Vue.js, React, Next.js, Node.js, Prisma, and PostgreSQL. Previously served as a Project Manager, leading multi-stakeholder technical squads and managing complex infrastructure. Proven track record of shipping scalable web applications across e-commerce and mobile platforms. Passionate about technical execution and agile team collaboration to deliver production-ready software solutions.",
+    "description": "Results-driven Software Engineer specializing in high-performance web applications and digital storefronts across React, Next.js, Vue 3, Shopify (Liquid), and WordPress (PHP). Deeply proficient in Node.js and database architectures, combining technical execution with a project management background to optimize e-commerce platforms, streamline developer velocity, and ship production-ready software solutions.",
 
     "contact": {
       "location": "Abuja, Nigeria",
@@ -154,28 +166,34 @@
         "React Native (Expo)",
         "Next.js",
         "Vue.js",
-        "Remix.js",
         "jQuery",
-        "EJS",
-        "Shadcn UI"
+        "EJS"
       ],
 
       "Backend Development": [
         "Node.js",
         "Express.js",
         "REST-API",
-        "Socket.IO",
-        "OpenAI API"
+        "Socket.IO"
       ],
+
+      "AI & Automation": ["AI Agents, Agentic Web, AI Automation Analysis, OpenAI API"],
 
       "Database & ORM": ["PostgreSQL", "MongoDB", "Neon", "Prisma"],
 
       "Design & Prototyping": ["Figma", "Adobe XD"],
 
-      "Version Control": ["Git", "GitHub"]
+      "Version Control & DevOps": ["Git", "GitHub", "CI/CD"]
+
     },
 
     "certifications": [
+      {
+        "provider": "Mercor",
+        "type": "Certificate of Completion",
+        "title": "Mercor: Introduction to Agents",
+        "year": "2026"
+      },
       {
         "provider": "Udemy",
         "type": "Certificate of Completion",
@@ -246,6 +264,21 @@
 
       {
         "id": "2",
+        "dates": "Present",
+        "type": "Full Time",
+        "position": "WordPress Developer",
+        "company": "Carnival Wiz Pte Ltd.",
+        "location": "Singapore",
+        "workMode": "Remote",
+        "bullets": [
+          "Engineered custom WordPress themes and plugins using PHP, HTML, CSS, and JavaScript for bespoke solutions.",
+          "Built and optimized e-commerce storefronts leveraging WooCommerce and secure payment gateway integrations.",
+          "Boosted website performance and SEO to maximize organic visibility and cross-device responsiveness."
+        ]
+      },
+
+      {
+        "id": "3",
         "dates": "2022–2024",
         "type": "Full Time",
         "position": "Front End Developer",
@@ -263,7 +296,7 @@
       },
 
       {
-        "id": "3",
+        "id": "4",
         "dates": "2013–2016",
         "type": "Full Time",
         "position": "Project Manager",
