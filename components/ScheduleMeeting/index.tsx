@@ -379,25 +379,20 @@ const ScheduleMeeting = () => {
                   Cancel
                 </Button>
 
-                <Button
+                <button
                   type="submit"
-                  className="
-      theme-button-primary
-      group
-      rounded-full
-      px-5
-      transition-all
-      duration-300
-      hover:-translate-y-0.5
-    "
+                  className="group inline-flex h-9 items-center justify-center rounded-full border border-[var(--button-primary-border)] bg-[var(--button-primary-bg)] px-6 text-sm font-medium text-[var(--button-primary-text)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--button-primary-hover-border)] hover:bg-[var(--button-primary-hover-bg)] hover:text-[var(--button-primary-text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-primary)] focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--bg-secondary)]"
                 >
                   <span className="flex items-center gap-2">
                     Prepare meeting request
-                    <span className="transition-transform duration-300 group-hover:translate-x-0.5">
+                    <span
+                      aria-hidden="true"
+                      className="transition-transform duration-300 group-hover:translate-x-0.5"
+                    >
                       →
                     </span>
                   </span>
-                </Button>
+                </button>
               </div>
             </form>
           )}
